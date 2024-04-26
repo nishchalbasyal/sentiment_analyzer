@@ -1,0 +1,67 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+<div class="home_block">
+  <section class="hero">
+    <video autoplay muted loop id="bg-video">
+      <source src="{% static "assets/video/bg-video.mp4" %}" type="video/mp4">
+    </video>
+    <div class="hero-content">
+      <p id="presenter">Data Science Aspirants Present</p>
+      <h1>Welcome To Sentiment Analyzer</h1>
+      <button id="description" onClick="checkSentimentScore()">Find the emotion on text</button>
+    </div>
+  </section>
+
+  <section class="section-2">
+    {% comment %}
+    <div class="background-overlay"></div>
+    {% endcomment %}
+
+    <div class="col-1">
+      <h1 class="Question">What is Sentiment Analysis ?</h1>
+      <p class="answer">
+        Sentiment analysis (or opinion mining) is a natural language processing
+        (NLP) technique used to determine whether data is positive, negative or
+        neutral. Sentiment analysis is often performed on textual data to help
+        businesses monitor brand and product sentiment in customer feedback, and
+        understand customer needs.
+      </p>
+    </div>
+    <div class="col-2">
+      <img src="{% static "assets/img/Sentiment-analysis.jpg" %}" alt="Sentiment
+      Analysis">
+    </div>
+  </section>
+
+  <section class="section-3">
+    <h1>Who is Behind Data Science Aspirants ?</h1>
+    <section class="author-groups">
+    
+      <div class="author">
+        <div class="img">
+          <img src="{% static "assets/img/Nishchal.jpeg" %}" alt="Nishchal Basyal">
+        </div>
+        <span class="author-name">
+          <p>Nishchal Basyal</p>
+        </span>
+        <span class="intro">
+          <i>Passionate Web and Data Science Scholar</i>
+        </span>
+        <button>Linkedin</button>
+      </div>
+      <div class="author">
+        <div class="img">
+          <img src="{% static "assets/img/Shiv.jpeg" %}" alt="Shiva Gaire">
+        </div>
+        <span class="author-name">
+          <p>Shiva Prasad Gaire</p>
+        </span>
+        <span class="intro">
+          <i>Passionate Android and Data Science Scholar</i>
+        </span>
+        <button>Linkedin</button>
+      </div>
+    </section>
+  </section>
+</div>
+
+{% endblock %}

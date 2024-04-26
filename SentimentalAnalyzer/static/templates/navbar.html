@@ -1,0 +1,32 @@
+<header>
+    <nav class="nav" style="background-color:#e3f2fd">
+        <div class="brand">
+            <a href="/">SentimentAnalyzer.com</a>
+        </div>
+        <span class="searchform">
+            {% include "searchform.html" %}
+        </span>
+        <div class="nav-items ">
+            <ul class="nav-ul">
+                <li><a class="active" href="">Home</a></li>
+                <!-- Code for authenticated users -->
+                {% if request.user.is_authenticated %}
+                    <li><a href="{% url "checkScore" %}">Analyzer</a></li>
+                    <li><a href="/">About</a></li>
+                {% else %}
+                    <!-- Code for unauthenticated users -->
+                {% endif %}
+            </ul>
+            <span class="right-btn">
+                {% if  user.is_authenticated %}
+                    <form method="post" action="{% url 'logout' %}">
+                        {% csrf_token %}
+                        <button type="submit">Logout</button>
+                    </form>
+                {% else %}
+                    <button onclick="login_func()">Login</button>
+                {% endif %}
+            </span>
+        </div>
+    </nav>
+</header>

@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="check_score">
+  
+
+  <div class="notificationBox">
+    <p class="headline">Important Notice !!</p>
+    <ul>
+      <li>Data is Trained With Movie reviews</li>
+      <li>Limited For Movie Reviews Only</li>
+    </ul>
+  </div>
+  <h1>Welcome To Sentiment Analyzer</h1>
+  <div class="main_box">
+    <div class="col-1">
+      <div class="form-section">
+        <form action="{% url 'checkScore' %}" method='post'>
+
+          {% csrf_token %}
+          <div class="input-group">
+            <textarea
+              name="textToCheckSentiment"
+              id="textToCheckSentiment"
+              cols="45"
+              rows="10"
+              placeholder="Enter your text here..."
+            ></textarea>
+          </div>
+          <button type="button" class="reset" onclick="checkSentiment()">Check</button>
+
+         </form>
+      </div>
+      <div class="results">
+
+        <span class="result">
+          <strong id="sentimentScore">   
+          </strong>
+      </span>      
+      
+      </div>
+    </div>
+    <div class="col-2">
+      <div class="speedometer-box">
+        <div class="speedometer-container">
+          <div class="speedometer-text">
+            <div class="static">Sentiment</div>
+            <div class="dynamic">
+              <span class="km" id="sentimentValue">0</span>
+              <span class="unit">%</span>
+            </div>
+          </div>
+          <div class="center-point"></div>
+          <div class="speedometer-center-hide"></div>
+          <div class="speedometer-bottom-hide"></div>
+          <div class="arrow-container">
+            <div class="arrow-wrapper speed-0">
+              <div class="arrow"></div>
+            </div>
+          </div>
+          <div class="speedometer-scale speedometer-scale-1 active"></div>
+          <div class="speedometer-scale speedometer-scale-2"></div>
+          <div class="speedometer-scale speedometer-scale-3"></div>
+          <div class="speedometer-scale speedometer-scale-4"></div>
+          <div class="speedometer-scale speedometer-scale-5"></div>
+          <div class="speedometer-scale speedometer-scale-6"></div>
+          <div class="speedometer-scale speedometer-scale-7"></div>
+          <div class="speedometer-scale speedometer-scale-8"></div>
+          <div class="speedometer-scale speedometer-scale-9"></div>
+          <div class="speedometer-scale speedometer-scale-10"></div>
+          <div class="speedometer-scale speedometer-scale-11"></div>
+        </div>
+        <button class="decrease" onclick="decreaseSpeed()">Reset</button>
+      </div>
+    </div>
+     
+    
+  </div>
+  <div class="chart-section">
+     <span class="chart-pieces">
+
+       <canvas id="sentimentChartPie" width="400" height="200"></canvas>
+      </span>
+      <span class="chart-pieces">
+
+        <canvas id="sentimentChartBar" width="400" height="200"></canvas>
+      </span>
+  </div>
+
+  
+  <div class="additional-content">
+    <h2>Why Use Our Sentiment Analyzer?</h2>
+    <p>Our sentiment analyzer is designed to provide you with valuable insights into the sentiment of your text data. Here's why you should use it:</p>
+    <ul>
+      <li>Quick and accurate sentiment analysis</li>
+      <li>Easy-to-use interface</li>
+      <li>Works with movie reviews data</li>
+      <li>Real-time visualization with the speedometer</li>
+    </ul>
+  </div>
+
+</div>
+{% endblock content %}
