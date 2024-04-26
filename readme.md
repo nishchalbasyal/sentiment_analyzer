@@ -1,4 +1,4 @@
-<img width="448" alt="image" src="https://github.com/nishchalbasyal/sentiment_analyzer/assets/60071083/70dd119a-1946-4700-9ad0-a047e80c2a92"># Sentimental Analyzer
+# Sentimental Analyzer
 
 
 
@@ -8,7 +8,7 @@ Welcome to Sentimental Analyzer! This application allows you to analyze text sen
 
 1. Clone the repository:
     ```bash
-    git clone [https://github.com/nishchalbasyal/sentiment_analyzer/
+    git clone https://github.com/nishchalbasyal/sentiment_analyzer/
     ```
 2. Navigate to the project directory:
     ```bash
